@@ -40,6 +40,8 @@ So that once we add the couple of files from the instruction, and modify Program
 
 This builds and runs as expected in VS Code.
 
+(For all the images showing a working ```/todoitems``` endpoint, I'm just using a browser window instead of Postman or similar because I can fit all the relevant information into a smaller image.)
+
 In HTTP (which it runs as by default as the http profile is first in launchSettings.json):
 
 ![Project running in HTTP only in VS Code](/Section04MinimalAPIsDIRoutingDocker/assets/RunFromVSCode01_HTTP_RunningInVSCode.png)
