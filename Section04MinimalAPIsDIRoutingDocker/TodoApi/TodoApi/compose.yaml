@@ -1,0 +1,16 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
+
+services:
+  todoapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5000
+      - ASPNETCORE_HTTPS_PORTS=5050
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=pass
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    image: todoapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ~/.aspnet/https:/https:ro
