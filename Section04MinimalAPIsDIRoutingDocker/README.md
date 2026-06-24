@@ -1,4 +1,4 @@
-# Udemy - Mehmet Ozkaya - React - .NET Microservices: DDD, CQRS, Vertical/Clean Architecture
+# Udemy - Mehmet Ozkaya - .NET Microservices: DDD, CQRS, Vertical/Clean Architecture
 
 ## Section 04 - ASP.NET for Microservice Development: Minimal APIs, DI, Routing, and Docker
 
