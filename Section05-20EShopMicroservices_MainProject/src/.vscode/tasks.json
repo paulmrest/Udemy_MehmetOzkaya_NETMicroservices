@@ -80,10 +80,13 @@
       "dependsOn": [
         "docker-build: debug"
       ],
-      "dockerRun": {},
+      "dockerRun": {
+        "ASPNETCORE_URLS": "http://+:8080;https://+8081"
+      },
       "netCore": {
         "appProject": "${workspaceFolder}/Services/Catalog/Catalog.API/Catalog.API.csproj",
-        "enableDebugging": true
+        "enableDebugging": true,
+        "configureSsl": true
       }
     },
     {
@@ -97,5 +100,26 @@
         "appProject": "${workspaceFolder}/Services/Catalog/Catalog.API/Catalog.API.csproj"
       }
     }
+    // Mehet's suggestion: https://www.udemy.com/course/microservices-architecture-and-implementation-on-dotnet/learn/lecture/42551946#questions/22333127
+    // ,
+    // {
+    //     "label": "docker-compose up",
+    //     "type": "shell",
+    //     "command": "docker-compose",
+    //     "args": [
+    //         "up",
+    //         "--build"
+    //     ],
+    //     "problemMatcher": []
+    // },
+    // {
+    //     "label": "docker-compose down",
+    //     "type": "shell",
+    //     "command": "docker-compose",
+    //     "args": [
+    //         "down"
+    //     ],
+    //     "problemMatcher": []
+    // }
   ]
 }
