@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
       "name": ".NET Core Launch (web)",
       "type": "coreclr",
@@ -27,6 +28,15 @@
       "request": "attach"
     },
     {
+      "name": ".NET Core Docker Attach",
+      "type": "docker",
+      "request": "attach",
+      "platform": "netCore",
+      "sourceFileMap": {
+        "/src": "${workspaceFolder}"
+      }
+    },
+    {
       "name": "Containers: .NET Launch",
       "type": "docker",
       "request": "launch",
@@ -35,5 +45,27 @@
         "appProject": "${workspaceFolder}/Services/Catalog/Catalog.API/Catalog.API.csproj"
       }
     }
+    // Mehet's suggestion: https://www.udemy.com/course/microservices-architecture-and-implementation-on-dotnet/learn/lecture/42551946#questions/22333127
+    // ,
+    // {
+    //     "name": "Docker .NET Core Attach",
+    //     "type": "coreclr",
+    //     "request": "attach",
+    //     "processId": "${command:pickProcess}",
+    //     "pipeTransport": {
+    //         "pipeProgram": "docker",
+    //         "pipeArgs": [
+    //             "exec",
+    //             "-i",
+    //             "src-catalog.api-1"
+    //         ],
+    //         "debuggerPath": "/vsdbg/vsdbg",
+    //         "pipeCwd": "${workspaceFolder}",
+    //         "quoteArgs": false
+    //     },
+    //     "sourceFileMap": {
+    //         "/src": "${workspaceFolder}"
+    //     }
+    // }
   ]
 }
