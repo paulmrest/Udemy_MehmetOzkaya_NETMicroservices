@@ -56,7 +56,8 @@ public class CustomExceptionHandler
       Status = details.StatusCode,
       Instance = context.Request.Path
     };
-
+    problemDetails.Extensions.Add("traceId", context.TraceIdentifier);
+    
     if (exception is ValidationException validationException)
     {
       problemDetails.Extensions.Add("ValidationErrors", validationException.Errors);
