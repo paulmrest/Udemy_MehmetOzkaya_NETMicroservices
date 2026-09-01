@@ -46,12 +46,12 @@
       "dockerBuild": {
         "tag": "src:dev",
         "target": "base",
-        "dockerfile": "${workspaceFolder}/Services/Catalog/Catalog.API/Dockerfile",
+        "dockerfile": "${workspaceFolder}/Services/Discount/Discount.Grpc/Dockerfile",
         "context": "${workspaceFolder}",
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Catalog/Catalog.API/Catalog.API.csproj"
+        "appProject": "${workspaceFolder}/Services/Discount/Discount.Grpc/Discount.Grpc.csproj"
       }
     },
     {
@@ -62,7 +62,7 @@
       ],
       "dockerBuild": {
         "tag": "src:latest",
-        "dockerfile": "${workspaceFolder}/Services/Catalog/Catalog.API/Dockerfile",
+        "dockerfile": "${workspaceFolder}/Services/Discount/Discount.Grpc/Dockerfile",
         "context": "${workspaceFolder}",
         "platform": {
           "os": "linux",
@@ -71,7 +71,7 @@
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Catalog/Catalog.API/Catalog.API.csproj"
+        "appProject": "${workspaceFolder}/Services/Discount/Discount.Grpc/Discount.Grpc.csproj"
       }
     },
     {
@@ -80,13 +80,10 @@
       "dependsOn": [
         "docker-build: debug"
       ],
-      "dockerRun": {
-        "ASPNETCORE_URLS": "http://+:8080;https://+8081"
-      },
+      "dockerRun": {},
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Catalog/Catalog.API/Catalog.API.csproj",
-        "enableDebugging": true,
-        "configureSsl": true
+        "appProject": "${workspaceFolder}/Services/Discount/Discount.Grpc/Discount.Grpc.csproj",
+        "enableDebugging": true
       }
     },
     {
@@ -97,29 +94,8 @@
       ],
       "dockerRun": {},
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Catalog/Catalog.API/Catalog.API.csproj"
+        "appProject": "${workspaceFolder}/Services/Discount/Discount.Grpc/Discount.Grpc.csproj"
       }
     }
-    // Mehet's suggestion: https://www.udemy.com/course/microservices-architecture-and-implementation-on-dotnet/learn/lecture/42551946#questions/22333127
-    // ,
-    // {
-    //     "label": "docker-compose up",
-    //     "type": "shell",
-    //     "command": "docker-compose",
-    //     "args": [
-    //         "up",
-    //         "--build"
-    //     ],
-    //     "problemMatcher": []
-    // },
-    // {
-    //     "label": "docker-compose down",
-    //     "type": "shell",
-    //     "command": "docker-compose",
-    //     "args": [
-    //         "down"
-    //     ],
-    //     "problemMatcher": []
-    // }
   ]
 }
