@@ -10,10 +10,6 @@
       "args": [],
       "cwd": "${workspaceFolder}/Services/Catalog/Catalog.API",
       "stopAtEntry": false,
-      // "serverReadyAction": {
-      //   "action": "openExternally",
-      //   "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
-      // },
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -30,10 +26,22 @@
       "args": [],
       "cwd": "${workspaceFolder}/Services/Basket/Basket.API",
       "stopAtEntry": false,
-      // "serverReadyAction": {
-      //   "action": "openExternally",
-      //   "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
-      // },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
+      "name": "Discount.Grpc Debugging",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/Services/Discount/Discount.Grpc/bin/Debug/net10.0/Discount.Grpc.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Services/Discount/Discount.Grpc",
+      "stopAtEntry": false,
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -61,30 +69,8 @@
       "request": "launch",
       "preLaunchTask": "docker-run: debug",
       "netCore": {
-        "appProject": "${workspaceFolder}/Services/Catalog/Catalog.API/Catalog.API.csproj"
+        "appProject": "${workspaceFolder}/Services/Discount/Discount.Grpc/Discount.Grpc.csproj"
       }
     }
-    // Mehet's suggestion: https://www.udemy.com/course/microservices-architecture-and-implementation-on-dotnet/learn/lecture/42551946#questions/22333127
-    // ,
-    // {
-    //     "name": "Docker .NET Core Attach",
-    //     "type": "coreclr",
-    //     "request": "attach",
-    //     "processId": "${command:pickProcess}",
-    //     "pipeTransport": {
-    //         "pipeProgram": "docker",
-    //         "pipeArgs": [
-    //             "exec",
-    //             "-i",
-    //             "src-catalog.api-1"
-    //         ],
-    //         "debuggerPath": "/vsdbg/vsdbg",
-    //         "pipeCwd": "${workspaceFolder}",
-    //         "quoteArgs": false
-    //     },
-    //     "sourceFileMap": {
-    //         "/src": "${workspaceFolder}"
-    //     }
-    // }
   ]
 }
