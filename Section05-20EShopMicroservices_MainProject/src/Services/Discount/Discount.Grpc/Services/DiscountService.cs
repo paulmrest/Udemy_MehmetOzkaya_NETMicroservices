@@ -17,10 +17,10 @@ public class DiscountService
       .FirstOrDefaultAsync(c => c.ProductName == request.ProductName);
     if (coupon == null)
     {
-      coupon = new Models.Coupon { ProductName = "No Discount", Amount = 0, Description = "No Discount Desc" };
+      coupon = new Coupon { ProductName = "No Discount", Amount = 0, Description = "No Discount Desc" };
     }
 
-    logger.LogInformation("Discount is retrieved for ProductName : {productName}, Amount : {amount}", coupon.ProductName, coupon.Amount);
+    logger.LogInformation("Discount retrieved for ProductName : {productName}, Amount : {amount}", coupon.ProductName, coupon.Amount);
 
     return coupon.Adapt<CouponModel>();
   }
