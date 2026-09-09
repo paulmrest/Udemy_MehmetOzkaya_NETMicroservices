@@ -73,8 +73,6 @@ services:
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
       - ASPNETCORE_Kestrel__Certificates__Default__Password=pass
       - ConnectionStrings__Database=Data Source=discountdb
-      # - Kestrel__Endpoints__Grpc__Url=http://0.0.0.0:8080
-      # - Kestrel__Endpoints__Grpc__Protocols=Http2
     ports:
       - "6002:8080"
       - "6062:8081"

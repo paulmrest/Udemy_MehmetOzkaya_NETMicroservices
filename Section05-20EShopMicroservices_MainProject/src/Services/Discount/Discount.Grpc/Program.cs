@@ -9,9 +9,8 @@ builder.Services.AddGrpc();
 builder.Services.AddGrpcReflection();
 
 builder.Services.AddDbContext<DiscountContext>(opts =>
-{
-  opts.UseSqlite(builder.Configuration.GetConnectionString("Database"));
-});
+  opts.UseSqlite(builder.Configuration.GetConnectionString("Database"))
+);
 
 var app = builder.Build();
 
