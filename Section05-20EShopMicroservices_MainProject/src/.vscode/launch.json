@@ -1,5 +1,11 @@
 {
   "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Compound: Basket.API and Discount.Grpc Debugging",
+      "configurations": ["Basket.API Debugging", "Discount.Grpc Debugging"]
+    }
+  ],
   "configurations": [
     {
       "name": "Catalog.API Debugging",

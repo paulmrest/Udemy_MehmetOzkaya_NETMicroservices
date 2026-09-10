@@ -1,5 +1,7 @@
 using BuildingBlocks.Exceptions.Handler;
+using Discount.Grpc;
 using HealthChecks.UI.Client;
+using ImTools;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,6 +34,19 @@ builder.Services.AddStackExchangeRedisCache(options =>
 {
   options.Configuration = builder.Configuration.GetConnectionString("Redis");
   //options.InstanceName = "Basket";
+});
+
+//Grpc Services
+builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options =>
+{
+  options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
+//Debug ONLY
+}).ConfigurePrimaryHttpMessageHandler(() =>
+{
+  return new HttpClientHandler
+  {
+    ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+  };
 });
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
